@@ -3,6 +3,7 @@ from peewee import *
 
 from models.prof import prof
 from models.ra import ra
+from models.registration import registration
 from models.student import student
 
 #db = SqliteDatabase("database.db")
@@ -24,4 +25,5 @@ for professor in profs:
 
 
 #print(df.loc[0])
+
 #db.loc[] pegar primeira celula
