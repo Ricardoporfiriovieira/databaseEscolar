@@ -6,12 +6,20 @@ from models.ra import ra
 from models.student import student
 
 #db = SqliteDatabase("database.db")
-query = prof.select().join(ra)   
+#query = prof.select().join(ra)
 
-newquery = ra.select().where( ra.prof_id == 6 ).count()
-print(f"quantidade de alunos desse Professor: {newquery}")
+#raprof = int(input("Digite o RA do professor desejado: "))
 
 
+
+#newquery = ra.select().where( ra.prof_id == raprof ).count()
+#print(f"quantidade de alunos do Professor de RA {raprof} é: {newquery}")
+
+profs = prof.select()
+
+for professor in profs:
+        students_count = ra.select().where(ra.prof_id == professor.prof_id).count()
+        print(f"O professor {professor.prof_id} tem {students_count} alunos e tem a capacidade de ensino de {professor.teachingability}")
 
 
 
